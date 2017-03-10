@@ -2,10 +2,13 @@
 import React from 'react';
 
 // react dom is responsible to render react components to DOM (to html)
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+
+const API_KEY = 'AIzaSyCKwLpubG4AW39_tTEqFdtjACH1Ozvm0xg';
 
 // Create a new component. This component should produce some HTML
 // vanila js: const App = function() {
+// always one component per file, no matter what
 const App = () => {
   return <div>Hi!</div>;
 }
