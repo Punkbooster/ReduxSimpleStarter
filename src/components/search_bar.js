@@ -10,12 +10,25 @@ import React, { Component } from 'react'
 // class based component, it's just a plain javascript object
 // extends React.Component extends our searchBar class with react component methods
 class SearchBar extends Component {
-  render() {
-    return <input onChange={this.onInputChange} />
+
+  // when component state change the whole class component rerenders and also forces all of it's children to rerender
+  // wierd initialization of a state...
+  constructor(props) {
+    super(props)
+
+    this.state = { term: '' }
   }
 
   onInputChange(event) {
-    console.log(event.target.value)
+    this.setState({ term: event.target.value })
+  }
+
+  render() {
+    return (
+      <div>
+        <input onChange={this.onInputChange.bind(this)} />
+      </div>
+    )
   }
 }
 
