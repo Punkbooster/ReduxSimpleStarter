@@ -2,13 +2,11 @@
 import React, { Component } from 'react'
 import SearchBar from './components/search_bar'
 import YTSearch from 'youtube-api-search'
-
+import VideoList from './components/video_list'
 // react dom is responsible to render react components to DOM (to html)
 import ReactDOM from 'react-dom'
 
 const API_KEY = 'AIzaSyCKwLpubG4AW39_tTEqFdtjACH1Ozvm0xg'
-
-
 
 // Create a new component. This component should produce some HTML
 // vanila js: const App = function() {
@@ -16,7 +14,7 @@ const API_KEY = 'AIzaSyCKwLpubG4AW39_tTEqFdtjACH1Ozvm0xg'
 // example of function based component (component that has no state) we refactored to class component
 class App extends Component {
   constructor(props) {
-    super.props
+    super(props)
 
     this.state = { videos: [] }
 
@@ -30,6 +28,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos} />
       </div>
     )
   }
