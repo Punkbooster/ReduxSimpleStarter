@@ -4,7 +4,7 @@ import VideoListItem from './video_list_item'
 // example of function based component with props
 const VideoList = (props) => {
   const videoItems = props.videos.map((video) => {
-    return <VideoListItem key={video.etag} vide={video} />
+    return <VideoListItem key={video.etag} video={video} />
   })
 
   return (
