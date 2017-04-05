@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import SearchBar from './components/search_bar'
 import YTSearch from 'youtube-api-search'
 import VideoList from './components/video_list'
+import VideoDetail from './components/video_detail'
 // react dom is responsible to render react components to DOM (to html)
 import ReactDOM from 'react-dom'
 
@@ -28,6 +29,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoDetail video={this.state.videos[0]}/>
         <VideoList videos={this.state.videos} />
       </div>
     )
