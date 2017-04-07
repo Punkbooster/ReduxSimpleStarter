@@ -22,20 +22,23 @@ class App extends Component {
       selectedVideo: null
     }
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
-      // because of the ES6 { videos: videos} can be written like so:
+    this.videoSearch('surfboards')
+  }
+
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
+      // because of the ES6 { videos: videos} can be leaved as just videos,
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       })
-
     })
   }
 
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={term => this.videoSearch(term)} />
         <VideoDetail video={this.state.selectedVideo}/>
         <VideoList
           // also can be written as: (selectedVideo) => this.setState({selectedVideo})
